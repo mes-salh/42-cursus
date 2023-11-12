@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 22:06:38 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/11 22:06:53 by mes-salh         ###   ########.fr       */
+/*   Created: 2023/11/09 17:19:39 by mes-salh          #+#    #+#             */
+/*   Updated: 2023/11/11 22:04:35 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	int		i;
-	char	*s2;
+	long	len;
+	char	*new;
 
-	i = 0;
-	s2 = (char *)malloc(ft_strlen(s1) + 1);
-	if (s2 == NULL)
-		return (NULL);
-	while (s1[i] != 0)
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = 0;
-	return (s2);
+	new = (char *)s1;
+	if (!s1 || !set)
+		return (0);
+	while (*s1 != '\0' && ft_strchr(set,*s1) != 0)
+		s1++;
+	len = ft_strlen(s1);
+	while (len >= 0 && ft_strchr(set, s1[len]) != 0)
+		len--;
+	new = ft_substr((char *)s1, 0, len + 1);
+	return (new);
 }
 // int main()
 // {
-// 	char s1[] = ":amine:\n";
-// 	printf("%s\n", strdup(s1));
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
+// 	char a[] = "212MEDDAMINE212TT";
+// 	char b[] = "21TF";
+// 	printf("%s",ft_strtrim(a,b));
 // }

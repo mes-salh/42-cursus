@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 22:06:38 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/11 22:06:53 by mes-salh         ###   ########.fr       */
+/*   Created: 2023/11/11 23:09:07 by mes-salh          #+#    #+#             */
+/*   Updated: 2023/11/11 23:50:26 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmapi(char const *s, char (*f)(unsigned	int, char))
 {
-	int		i;
-	char	*s2;
+	unsigned int	i;
+	char			*str;
+	unsigned int	j;
 
-	i = 0;
-	s2 = (char *)malloc(ft_strlen(s1) + 1);
-	if (s2 == NULL)
+	j = 0;
+	if (!s || !f)
+		return (0);
+	i = ft_strlen (s);
+	str = malloc((sizeof(char) * i) + 1);
+	if (!str)
 		return (NULL);
-	while (s1[i] != 0)
+	while (i > j)
 	{
-		s2[i] = s1[i];
-		i++;
+		str[j] = (*f)(j, s[j]);
+		j++;
 	}
-	s2[i] = 0;
-	return (s2);
+	str[j] = '\0';
+	return (str);
 }
-// int main()
-// {
-// 	char s1[] = ":amine:\n";
-// 	printf("%s\n", strdup(s1));
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
-// }

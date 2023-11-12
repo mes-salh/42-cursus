@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 22:06:38 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/11 22:06:53 by mes-salh         ###   ########.fr       */
+/*   Created: 2023/11/12 17:16:12 by mes-salh          #+#    #+#             */
+/*   Updated: 2023/11/12 17:23:59 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*s2;
+	long	i;
 
-	i = 0;
-	s2 = (char *)malloc(ft_strlen(s1) + 1);
-	if (s2 == NULL)
-		return (NULL);
-	while (s1[i] != 0)
+	i = n;
+	if (fd < 0)
+		return ;
+	if (n < 0)
 	{
-		s2[i] = s1[i];
-		i++;
+		ft_putchar_fd('-',fd);
+		i = -i;
 	}
-	s2[i] = 0;
-	return (s2);
+	if (i >= 10)
+	{
+		ft_putnbr_fd((i / 10), fd);
+		ft_putchar_fd((i % 10) + '0', fd);
+	}
+	else
+		ft_putchar_fd((i + '0'), fd);
 }
-// int main()
-// {
-// 	char s1[] = ":amine:\n";
-// 	printf("%s\n", strdup(s1));
-// 	printf("%s\n", ft_strdup(s1));
-// 	return (0);
-// }
