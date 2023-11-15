@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 20:22:13 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/13 03:33:19 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:03:31 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,18 @@ char	**mes_free(char **array, int size)
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i < size && array[i] != NULL)
 	{
 		free(array[i]);
+		array[i] = NULL;
 		i++;
 	}
-	free(array);
-	return (NULL);
-}
-
-int	word_len(char const *s, char c, int i)
-{
-	int	len;
-
-	len = 0;
-	while (s[i] != c && s[i])
+	if (array != NULL)
 	{
-		len++;
-		i++;
+		free(array);
+		array = NULL;
 	}
-	return (len);
+	return (NULL);
 }
 
 char	*mes_findndcpy(char const *s, char c, int i)
@@ -68,8 +60,10 @@ char	*mes_findndcpy(char const *s, char c, int i)
 	char	*str;
 	int		len;
 
-	len = word_len(s, c, i);
 	j = 0;
+	len = 0;
+	while (s[i + len] != c && s[i + len])
+		len++;
 	str = (char *)malloc((len + 1));
 	if (!str)
 		return (NULL);
@@ -83,27 +77,17 @@ char	*mes_findndcpy(char const *s, char c, int i)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+char	**mes_allocat(char const *s, char c, char **array, int wordscount)
 {
-	char	**array;
-	int		wordscount;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	if (!s)
-		return (NULL);
-	wordscount = mes_len(s, c);
-	array = (char **)malloc ((wordscount + 1) * sizeof(char *));
-	if (!array)
-		return (NULL);
 	while (j < wordscount)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		if (!s[i])
-			break ;
 		array[j] = mes_findndcpy(s, c, i);
 		if (!array[j])
 		{
@@ -116,6 +100,20 @@ char	**ft_split(char const *s, char c)
 	}
 	array[wordscount] = NULL;
 	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	int		wordscount;
+
+	if (!s)
+		return (NULL);
+	wordscount = mes_len(s, c);
+	array = (char **)malloc ((wordscount + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	return (mes_allocat(s, c, array, wordscount));
 }
 
 // int main()

@@ -6,13 +6,13 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:16:12 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/12 17:23:59 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:00:12 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	i;
 
@@ -21,7 +21,7 @@ void ft_putnbr_fd(int n, int fd)
 		return ;
 	if (n < 0)
 	{
-		ft_putchar_fd('-',fd);
+		ft_putchar_fd('-', fd);
 		i = -i;
 	}
 	if (i >= 10)

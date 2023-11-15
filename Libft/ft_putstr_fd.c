@@ -6,11 +6,12 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 16:27:01 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/12 16:31:25 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:59:04 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (fd < 0 || !s)

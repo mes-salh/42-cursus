@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 21:37:09 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/13 04:38:10 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:01:59 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
 // #include <stdio.h>
 // #include <string.h>
 // int main()
@@ -41,4 +40,3 @@ void	ft_bzero(void *s, size_t n)
 
 // 	return 0;
 // }
-

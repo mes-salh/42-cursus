@@ -9,15 +9,13 @@ ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
 OBJS = ${SRC:.c=.o}
 LIBC = ar -rcs
-FLAGS = -Wall -Wextra -Werror -g
-CC = cc
-INCS = .
+CC = cc -Wall -Wextra -Werror -g
 RM = rm -f
 NAME = libft.a
 SO = libt.so
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
+	${CC} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 		${LIBC} ${NAME} ${OBJS}
