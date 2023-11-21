@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:46:48 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/08 13:44:16 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:18:20 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char src[] = "1212";
-	char dest[5];
-	ft_memmove(dest,src,5);
-	printf("%s",dest);
-	return 0;
-}
-*/

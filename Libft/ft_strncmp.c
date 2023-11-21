@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:49:12 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/06 21:54:22 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:25:36 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return (ss1[i] - ss2[i]);
 }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	char s1[] = "m";
-// 	char s2[] = "meddamine";
-// 	size_t i = 2;
-// 	printf("%d",ft_strncmp(s1, s2, i));
-// 	return (0);
-// }

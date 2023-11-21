@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:13:37 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/11 22:06:17 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:11:49 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-// int main()
-// {
-// 	char s[] = "medd";
-// 	char v[] = " amine";
-// 	printf("%s",ft_strjoin(s,v));
-// }

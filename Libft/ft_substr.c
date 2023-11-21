@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 20:41:29 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/09 14:49:01 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/20 00:32:16 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-// int main()
-// {
-// 	char str[] = "MEDDAMINE";
-// 	printf("%s",ft_substr(str,4,5));
-// }

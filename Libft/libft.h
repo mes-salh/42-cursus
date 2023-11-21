@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:07:11 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/14 14:31:44 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 20:32:20 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

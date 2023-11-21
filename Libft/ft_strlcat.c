@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 03:12:53 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/06 15:05:44 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:11:51 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (dstlen + srclen);
 }
-// #include <string.h>
-// #include <stdio.h>
-// #include <stdio.h>
-// int	main()
-// {
-// 	char *dst = NULL;
-// 	char src[] = "NULL" ;
-// 	ft_strlcat(dst, src, 0);
-// 	printf("%s\n", dst);
-// // strlcat(NULL, "abc", 1);
-// exit(0);
-// // ft_strlcat(NULL, "abc", 0);
-// // exit(0);
-// // ft_strlcat("abc", NULL, 0);
-// // exit(0);
-// }

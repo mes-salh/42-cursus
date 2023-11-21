@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:01:54 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/04 11:30:28 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:11:42 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main()
-{
-	char string[] = "0x109785a40";
-	char cara = '\0';
-	char *res ;
-	char *res1;
-	res = ft_strchr(string, cara);
-	res1 = strchr(string, cara);
-	printf("%s" , res);
-	printf("\n%s" ,res1);
-	return 0;
-}
-
-*/

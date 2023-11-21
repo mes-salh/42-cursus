@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:09:03 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/06 15:43:27 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 22:55:45 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char a[] = "messalh";
-// 	char b = 'l';
-// 	puts(ft_memchr(a,b,7));
-// }

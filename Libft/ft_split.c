@@ -6,13 +6,13 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 20:22:13 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/15 16:03:31 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 18:55:52 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	mes_len(const char *s, char c)
+static int	mes_len(const char *s, char c)
 {
 	int	existe;
 	int	counter;
@@ -54,7 +54,7 @@ char	**mes_free(char **array, int size)
 	return (NULL);
 }
 
-char	*mes_findndcpy(char const *s, char c, int i)
+static char	*mes_findndcpy(char const *s, char c, int i)
 {
 	int		j;
 	char	*str;
@@ -77,7 +77,7 @@ char	*mes_findndcpy(char const *s, char c, int i)
 	return (str);
 }
 
-char	**mes_allocat(char const *s, char c, char **array, int wordscount)
+static char	**mes_allocat(char const *s, char c, char **array, int wordscount)
 {
 	int		i;
 	int		j;
@@ -115,13 +115,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (mes_allocat(s, c, array, wordscount));
 }
-
-// int main()
-// {
-// 	char *s = "hello$$$$$$$$$  world   $Im Tayfoon $$$$$$$$$$$$$$$$$";
-// 	char c = '$';
-// 	char **res = ft_split(s, c);
-// 	printf("%s", res[0]);
-// 	free(res);
-// 	return (0);
-// }

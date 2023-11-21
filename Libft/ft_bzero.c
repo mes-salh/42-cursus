@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 21:37:09 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/15 15:01:59 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:10:50 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char str[] = "Medd Amine";
-// 	ft_bzero(str, sizeof(str));
-
-// 	int i = 0;
-// 	while (i < sizeof(str)) {
-// 		printf("%d", str[i]);
-// 		i++;
-// 	}
-
-// 	return 0;
-// }

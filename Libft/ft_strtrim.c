@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:19:39 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/11 22:04:35 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/20 00:33:53 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	long	len;
+	size_t	len;
 	char	*new;
 
 	new = (char *)s1;
@@ -23,14 +23,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (*s1 != '\0' && ft_strchr(set,*s1) != 0)
 		s1++;
 	len = ft_strlen(s1);
-	while (len >= 0 && ft_strchr(set, s1[len]) != 0)
-		len--;
+	if (len != 0)
+		while (len >= 0 && ft_strchr(set, s1[len]) != 0)
+			len--;
 	new = ft_substr((char *)s1, 0, len + 1);
 	return (new);
 }
-// int main()
-// {
-// 	char a[] = "212MEDDAMINE212TT";
-// 	char b[] = "21TF";
-// 	printf("%s",ft_strtrim(a,b));
-// }

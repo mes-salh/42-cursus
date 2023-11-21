@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:59:40 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/15 14:59:44 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:11:58 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-// // #include <stdio.h>
-// // #include <string.h>
-// // int main ()
-// // {
-// // 	char *b = NULL;
-// // 	char c[] = "test";
-// // 	// printf("mine :%s\n",ft_strnstr(b,c,4));
-// // 	printf("the original :%s\n",strnstr(b,c,4));
-// // 	exit(0);
-// // }

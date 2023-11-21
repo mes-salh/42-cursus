@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 11:55:08 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/14 20:55:37 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:14:21 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,10 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*i;
 
-	i = b;
+	i = (unsigned char *)b;
 	while (len-- > 0)
 	{
 		*i++ = c;
 	}
 	return (b);
 }
-// int main()
-// {
-// 	int i = 0;
-// // 10100111001
-// // 00000101 00111001
-// // 11111010 11000111
-// 	ft_memset(&i, 255 , 4);
-// 	ft_memset(&i, 250 , 2);
-// 	ft_memset(&i, 199 , 1);
-// 	printf("%d", i);
-// }
