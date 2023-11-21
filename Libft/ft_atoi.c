@@ -6,17 +6,31 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:44:48 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/12 16:11:22 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:33:45 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	mes_pnbr(int i, long nb, int sign, const char *str)
+{
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = (nb * 10) + (str[i] - 48);
+		if (nb < 0 && sign == -1)
+			return (0);
+		else if (nb < 0 && sign == 1)
+			return (-1);
+		i++;
+	}
+	return ((int)(nb * sign));
+}
+
 int	ft_atoi(const char *str)
 {
 	int		i;
-	char	sign;
-	int		nb;
+	int		sign;
+	long	nb;
 
 	i = 0;
 	sign = 1;
@@ -30,16 +44,5 @@ int	ft_atoi(const char *str)
 		sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		i++;
-	}
-	return (nb * sign);
+	return (mes_pnbr(i, nb, sign, str));
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	char a[] = "-9223372036854775807";
-// 	printf("%d\n", atoi(a));
-// }
