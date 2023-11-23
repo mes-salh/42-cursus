@@ -11,7 +11,6 @@ OBJS = ${SRC:.c=.o}
 LIBC = ar -rcs
 CC = cc -Wall -Wextra -Werror
 RM = rm -f
-NAME = libft.a
 
 
 %.o: %.c libft.h
@@ -31,4 +30,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY : clean
