@@ -3,12 +3,12 @@
 Libft is a custom C library created as part of a programming curriculum. It contains a collection of commonly used functions in C programming to aid in various tasks, ranging from string manipulation to memory allocation.
 
 <h5>Features</h5>
-String Manipulation: Functions for string length, comparison, copy, and concatenation.
-Memory Management: Memory allocation, freeing, and manipulation functions.
-Linked Lists: Basic operations for singly linked lists.
-Character Operations: Functions to check for character types and conversions.
-Additional Utilities: Other helpful functions frequently used in C programming.
-Getting Started
+*String Manipulation: Functions for string length, comparison, copy, and concatenation.
+*Memory Management: Memory allocation, freeing, and manipulation functions.
+*Linked Lists: Basic operations for singly linked lists.
+*Character Operations: Functions to check for character types and conversions.
+*Additional Utilities: Other helpful functions frequently used in C programming.
+<h5>Getting Started</h5>
 To use libft in your project:
 
 Clone the repository: git clone <repository_url>
