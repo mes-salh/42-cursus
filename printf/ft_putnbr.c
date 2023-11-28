@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putadd.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 18:29:39 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/28 18:05:18 by mes-salh         ###   ########.fr       */
+/*   Created: 2023/11/12 17:16:12 by mes-salh          #+#    #+#             */
+/*   Updated: 2023/11/28 18:07:30 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthx(unsigned long n, int *j)
+void	ft_putnbr_fd(int n, int *j)
 {
-	char	*hex;
+	unsigned int	i;
 
-	hex = "0123456789abcdef";
-	if (n >= 16)
+	i = n;
+	if (n < 0)
 	{
-		ft_puthx((n / 16), j);
+		ft_putchar_fd('-', j);
+		i = -n;
 	}
-	ft_putchar_fd(hex[n % 16], j);
-}
-
-void	ft_putadd(void *ptr, int *j)
-{
-	unsigned long	n;
-	char			*hex;
-
-	hex = "0123456789abcdef";
-	n = (unsigned long)ptr;
-	ft_putchar_fd('0', j);
-	ft_putchar_fd('x', j);
-	if (ptr == NULL)
+	if (i >= 10)
 	{
-		ft_putchar_fd('0', j);
-		return ;
+		ft_putnbr_fd((i / 10), j);
+		ft_putchar_fd((i % 10) + '0', j);
 	}
-	ft_puthx(n, j);
+	else
+		ft_putchar_fd((i + '0'), j);
 }
