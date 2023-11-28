@@ -40,3 +40,20 @@ int main() {
     ft_printf("Hello, %s!\n", "world");
     return 0;
 }
+
+## Supported Conversions
+%c: Prints a single character.
+%s: Prints a string.
+%p: Prints a void pointer in hexadecimal format.
+%d: Prints a decimal (base 10) number.
+%i: Prints an integer in base 10.
+%u: Prints an unsigned decimal (base 10) number.
+%x: Prints a number in hexadecimal (base 16) lowercase format.
+%X: Prints a number in hexadecimal (base 16) uppercase format.
+%%: Prints a percent sign.
+
+Building the Project
+To build the project and create the libftprintf.a library, use the provided Makefile.
+
+```bash
+make
