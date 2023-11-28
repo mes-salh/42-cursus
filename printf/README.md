@@ -12,8 +12,6 @@ This project implements a custom version of the `printf()` function from the C s
 - [Supported Conversions](#supported-conversions)
 - [Building the Project](#building-the-project)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
