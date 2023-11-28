@@ -19,3 +19,24 @@ This project implements a custom version of the `printf()` function from the C s
 
 To get started with this project, clone this repository:
 
+## Prerequisites
+
+- GCC compiler
+- `ar` command-line utility
+
+## Usage
+
+To use `ft_printf()` in your project, follow these steps:
+
+1. Include the header file `libftprintf.h` in your source code.
+2. Compile your code with the library `libftprintf.a` linked.
+
+Example:
+
+```c
+#include "libftprintf.h"
+
+int main() {
+    ft_printf("Hello, %s!\n", "world");
+    return 0;
+}
