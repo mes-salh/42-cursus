@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/29 21:44:40 by mes-salh          #+#    #+#              #
+#    Updated: 2023/11/29 21:44:41 by mes-salh         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 SRC = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_puthexlow.c ft_puthexup.c ft_putnbru.c ft_putadd.c
 OBJS = ${SRC:.c=.o}

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 16:27:01 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/28 18:08:46 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:42:09 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int *j)
+void	ft_putstr(char *s, int *j)
 {
 	int	i;
 
 	i = 0;
 	if (!s)
 	{
-		*j = write(1, "(null)", 6);
+		*j += write(1, "(null)", 6);
 		return ;
 	}
 	while (s[i] != '\0')
 	{
-		ft_putchar_fd(s[i], j);
+		ft_putchar(s[i], j);
 		i++;
 	}
 }

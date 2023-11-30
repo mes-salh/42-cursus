@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 03:23:01 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/28 18:10:38 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:11:21 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 static void	ft_print(const char *format, va_list arguments, int *length, int *i)
 {
 	if (format[*i] == 's')
-		ft_putstr_fd(va_arg(arguments, char *), length);
+		ft_putstr(va_arg(arguments, char *), length);
 	else if (format[*i] == 'd' || format[*i] == 'i')
-		ft_putnbr_fd(va_arg(arguments, int), length);
+		ft_putnbr(va_arg(arguments, int), length);
 	else if (format[*i] == 'c')
-		ft_putchar_fd(va_arg(arguments, int), length);
+		ft_putchar(va_arg(arguments, int), length);
 	else if (format[*i] == '%')
-		ft_putchar_fd('%', length);
+		ft_putchar('%', length);
 	else if (format[*i] == 'x')
-		ft_puthexlow_fd(va_arg(arguments, int), length);
+		ft_puthexlow(va_arg(arguments, int), length);
 	else if (format[*i] == 'X')
-		ft_puthexup_fd(va_arg(arguments, int), length);
+		ft_puthexup(va_arg(arguments, int), length);
 	else if (format[*i] == 'u')
-		ft_putnbru_fd(va_arg(arguments, unsigned int), length);
+		ft_putnbru(va_arg(arguments, unsigned int), length);
 	else if (format[*i] == 'p')
 		ft_putadd(va_arg(arguments, void *), length);
 	else
-		ft_putchar_fd(format[*i], length);
+		ft_putchar(format[*i], length);
 	(*i)++;
 }
 
@@ -49,7 +49,7 @@ int	ft_printf(const char *format, ...)
 	while (format[index])
 	{
 		if (format[index] != '%')
-			ft_putchar_fd(format[index++], &length);
+			ft_putchar(format[index++], &length);
 		else if (format[index] == '%' && format[index + 1] == '\0')
 			index++;
 		else

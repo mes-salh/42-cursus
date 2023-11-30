@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbru_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbru.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 06:07:17 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/11/28 18:08:08 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/11/29 21:41:04 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbru_fd(unsigned int n, int *j)
+void	ft_putnbru(unsigned int n, int *j)
 {
 	if (n >= 10)
 	{
-		ft_putnbru_fd((n / 10), j);
-		ft_putchar_fd((n % 10) + '0', j);
+		ft_putnbru((n / 10), j);
+		ft_putchar((n % 10) + '0', j);
 	}
 	else
-		ft_putchar_fd((n + '0'), j);
+		ft_putchar((n + '0'), j);
 }
