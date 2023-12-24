@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:41:56 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/12/24 11:40:21 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/12/24 22:54:47 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 1000000
 # endif
 
 char	*ft_strdup(const char *s1);
