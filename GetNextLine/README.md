@@ -9,7 +9,7 @@ This project involves implementing a function `get_next_line` in C that reads a 
 - `get_next_line.c`: Contains the implementation of the `get_next_line` function.
 - `get_next_line_utils.c`: Includes helper functions used in `get_next_line.c`.
 - `get_next_line.h`: Header file defining the prototype for `get_next_line`.
-- `README.md`: Project documentation.
+- `BONUS PART...`:
 
 ## Usage
 
