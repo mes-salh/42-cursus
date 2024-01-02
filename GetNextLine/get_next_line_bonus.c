@@ -6,103 +6,112 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 03:16:46 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/12/25 04:12:22 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:19:54 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*ft_free(char *buffer1, char *buffer2)// join and free
+void	ft_free(char **ptr)
 {
-	char	*c;
-
-	c = ft_strjoin(buffer1, buffer2);
-	free(buffer1);
-	buffer1 = NULL;
-	return (c);
+	if (ptr && *ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
 }
 
-char	*ft_suivante(char *buffer)// delete line find
+char	*ft_get_the_next(char *result)
 {
-	char	*ligne;
 	int		i;
 	int		j;
+	char	*line;
 
 	i = 0;
 	j = 0;
-	while (buffer[i] && buffer[i] != '\n')// find len of first line
+	while (result[i] && result[i] != '\n')
 		i++;
-	if (!buffer[i])// if endofline == \0 return NULL
+	if (!result[i])
 	{
-		free(buffer);
+		ft_free(&result);
 		return (NULL);
 	}
-	ligne = ft_calloc((ft_strlen(buffer) - i + 1), 1);// len of file - len of firstline + 1
+	line = ft_calloc((ft_strlen(result) - i + 1), 1);
 	i++;
-	while (buffer[i])// line == buffer
-		ligne[j++] = buffer[i++];
-	free(buffer);
-	return (ligne);
+	while (result[i])
+		line[j++] = result[i++];
+	ft_free(&result);
+	return (line);
 }
 
-char	*ft_ligne(char *buffer)// take line for return
+char	*ft_get_the_line(char *result)
 {
-	char	*ligne;
+	char	*getline;
 	int		i;
 
 	i = 0;
-	if (!buffer[i])	// if no line return NULL
+	if (!result[i])
 		return (NULL);
-	while (buffer[i] && buffer[i] != '\n')// go to the endofline
+	while (result[i] && result[i] != '\n')
 		i++;
-	ligne = ft_calloc (i + 2, 1);// malloc to eol
+	if (result[i] == '\n')
+		getline = ft_calloc (i + 2, 1);
+	else
+		getline = ft_calloc (i + 1, 1);
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n')	// line = buffer
+	while (result[i] && result[i] != '\n')
 	{
-		ligne[i] = buffer[i];
+		getline[i] = result[i];
 		i++;
 	}
-	if (buffer[i] && buffer[i] == '\n')// if endofline is \0 or \n, replace endofline by \n
-		ligne[i++] = '\n';
-	return (ligne);
+	if (result[i] && result[i] == '\n')
+		getline[i++] = '\n';
+	return (getline);
 }
 
-char	*ft_lire(int fd, char *resultat)
+char	*ft_read_line(int fd, char *result)
 {
 	char	*buffer;
-	int		lire;
+	int		i;
+	char	*tmp;
 
-	buffer = ft_calloc(BUFFER_SIZE + 1, 1);// malloc bufferzzz
-	lire = 1;
-	while (lire > 0)
+	buffer = ft_calloc((size_t)BUFFER_SIZE + 1, 1);
+	i = 1;
+	while (i > 0)
 	{
-		lire = read(fd, buffer, BUFFER_SIZE);
-		if (lire == -1)
+		i = read(fd, buffer, BUFFER_SIZE);
+		if (i == -1)
 		{
-			free(buffer);
-			free(resultat);
+			ft_free(&buffer);
+			ft_free(&result);
 			return (NULL);
 		}
-		buffer[lire] = 0;// 0 end of buffer
-		resultat = ft_free(resultat, buffer);// join and free
-		if (ft_strchr(buffer, '\n'))//quit if \n find
+		buffer[i] = 0;
+		tmp = result;
+		result = ft_strjoin(result, buffer);
+		ft_free(&tmp);
+		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
-	free(buffer);
-	return (resultat);
+	ft_free(&buffer);
+	return (result);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*resultat[BUFFER_MAX];
-	char		*ligne;
+	static char	*result[BUFFER_MAX];
+	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0 || fd > BUFFER_MAX)// error handling
-		return (free(resultat[fd]), resultat[fd] = NULL, NULL);
-	resultat[fd] = ft_lire (fd, resultat[fd]);// read file
-	if (!resultat[fd])// if no line return NULL
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0 || fd > BUFFER_MAX)
+	{
+		if (fd < 0 || fd > BUFFER_MAX)
+			return (NULL);
+		return (free(result[fd]), result[fd] = NULL, NULL);
+	}
+	result[fd] = ft_read_line (fd, result[fd]);
+	if (!result[fd])
 		return (NULL);
-	ligne = ft_ligne(resultat[fd]);// take line for return
-	resultat[fd] = ft_suivante(resultat[fd]);// delete line find
-	return (ligne);// return line
+	line = ft_get_the_line(result[fd]);
+	result[fd] = ft_get_the_next(result[fd]);
+	return (line);
 }

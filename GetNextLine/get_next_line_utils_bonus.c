@@ -6,11 +6,11 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 03:14:32 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/12/25 03:14:33 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/12/31 12:06:55 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -47,19 +47,16 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*ptr;
 	size_t	i;
 
-	if ((int)count < 0 || (int)size < 0)
+	ptr = malloc(count * size);
+	if (!ptr)
 		return (NULL);
-	i = count * size;
-	ptr = (char *)malloc(i);
-	if (ptr == NULL)
-		return (NULL);
-	while (i > 0)
+	i = 0;
+	while (i < count * size)
 	{
-		*ptr = 0;
-		ptr++;
-		i--;
+		ptr[i] = 0;
+		i++;
 	}
-	return ((void *)(ptr - count * size));
+	return ((void *)ptr);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)

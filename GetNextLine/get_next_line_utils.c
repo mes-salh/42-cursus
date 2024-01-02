@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:41:54 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/12/24 16:40:48 by mes-salh         ###   ########.fr       */
+/*   Updated: 2023/12/31 01:34:48 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,16 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*ptr;
 	size_t	i;
 
-	if ((int)count < 0 || (int)size < 0)
+	ptr = malloc(count * size);
+	if (!ptr)
 		return (NULL);
-	i = count * size;
-	ptr = (char *)malloc(i);
-	if (ptr == NULL)
-		return (NULL);
-	while (i > 0)
+	i = 0;
+	while (i < count * size)
 	{
-		*ptr = 0;
-		ptr++;
-		i--;
+		ptr[i] = 0;
+		i++;
 	}
-	return ((void *)(ptr - count * size));
+	return ((void *)ptr);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
