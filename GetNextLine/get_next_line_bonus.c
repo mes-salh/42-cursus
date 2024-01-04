@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 03:16:46 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/01/02 16:19:54 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/01/03 22:40:49 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,11 @@ char	*ft_read_line(int fd, char *result)
 
 char	*get_next_line(int fd)
 {
-	static char	*result[BUFFER_MAX];
+	static char	*result[OPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0 || fd > BUFFER_MAX)
-	{
-		if (fd < 0 || fd > BUFFER_MAX)
-			return (NULL);
-		return (free(result[fd]), result[fd] = NULL, NULL);
-	}
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
+		return (NULL);
 	result[fd] = ft_read_line (fd, result[fd]);
 	if (!result[fd])
 		return (NULL);

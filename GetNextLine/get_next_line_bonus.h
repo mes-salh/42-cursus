@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 03:14:46 by mes-salh          #+#    #+#             */
-/*   Updated: 2023/12/31 12:07:20 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/01/03 22:38:08 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
-
-# ifndef BUFFER_MAX
-#  define BUFFER_MAX 10240
-# endif
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
